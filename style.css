@@ -10,7 +10,7 @@
     color: white;
 }
 
-body {
+html body {
     background-color: var(--Violet);
     background-image: url(images/bg-mobile.svg);
     background-size: 100%;
@@ -118,8 +118,52 @@ a {
     opacity: 70%;
 }
 
-@media only screen and (min-width: 600px) {
-    body {
-        flex-direction: row;
+@media only screen and (min-width: 800px) {
+
+    :root {
+        font-size: 25px;
     }
+
+    html body {
+        background-image: url(images/bg-desktop.svg);
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .main-container {
+        flex-direction: row;
+        width: 85%;
+        height: 90%;
+        margin: auto;
+    }
+
+    header {
+        align-self: flex-start;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    section {
+        padding-left: 3em;
+        text-align: unset;
+        height: auto;
+        align-self: center;
+    }
+
+    .icons {
+        text-align: right;
+        margin-top: 2em;
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    button {
+        font-size: .7rem;
+    }
+
 }
