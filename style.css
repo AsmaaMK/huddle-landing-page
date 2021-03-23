@@ -10,6 +10,10 @@
     color: white;
 }
 
+body {
+    margin: 0;
+}
+
 html body {
     background-color: var(--Violet);
     background-image: url(images/bg-mobile.svg);
@@ -17,36 +21,28 @@ html body {
     background-repeat: no-repeat;
 }
 
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.main-container>* {
-    width: 80%;
-}
-
 /* header style */
-
 header {
-    margin: 2em 0;
-}
-
-.mockups {
-    margin: 3rem 0 0 0;
+    margin: 10%;
 }
 
 .logo {
-    width: 9rem;
-}
-
-.mockups {
-    width: 100%;
+    width: 50%;
 }
 
 /* section style */
+.flex-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.mockups {
+    margin: 2rem 0;
+    width: 100%;
+}
 
 h1 {
     font-family: var(--heading-font);
@@ -61,6 +57,7 @@ section, footer {
 }
 
 button {
+    cursor: pointer;
     width: 15em;
     height: 3em;
     border-radius: 50px;
@@ -70,6 +67,7 @@ button {
     color: var(--Violet);
     margin-top: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 button:hover, button:focus {
@@ -91,6 +89,7 @@ svg {
     border-radius: 50px;
     padding: 8px;
     margin: 5px;
+    transition: border-color 0.3s ease, fill 0.3s ease;
 }
 
 svg:hover, svg:focus {
@@ -119,9 +118,19 @@ a {
 }
 
 @media only screen and (min-width: 800px) {
+    :root {
+        font-size: 200%;
+    }
+
+    button {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
 
     :root {
-        font-size: 25px;
+        font-size: 120%;
     }
 
     html body {
@@ -130,40 +139,52 @@ a {
         height: 100vh;
     }
 
-    .main-container {
-        flex-direction: row;
-        width: 85%;
-        height: 90%;
-        margin: auto;
+    /* header */
+    .logo {
+        width: 18%;
     }
 
     header {
-        align-self: flex-start;
+        margin: 3% 10% 0%;
     }
 
-    h1 {
-        font-size: 1.7rem;
+    /* main container */
+    body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .main-container {
+        max-width: 1700px;
+        width: 100vw;
+        margin: auto;
+    }
+
+    .flex-container {
+        width: 80%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     section {
-        padding-left: 3em;
         text-align: unset;
-        height: auto;
-        align-self: center;
     }
 
+    .mockups {
+        flex: 3;
+        padding-right: 6%;
+    }
+
+    .flex-div {
+        flex: 2;
+    }
+
+    /* footer */
     .icons {
         text-align: right;
-        margin-top: 2em;
-    }
-
-    svg {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    button {
-        font-size: .7rem;
+        margin: 0 10% ;
     }
 
 }
